@@ -25,4 +25,4 @@ jobs:
                   id
                 }
               }
-            }' -f org=dvalleorg -f number=$PROJECT_NUMBER
+            }' -f org=$ORGANIZATION -f number=$PROJECT_NUMBER

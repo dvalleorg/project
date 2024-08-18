@@ -8,8 +8,6 @@ on:
 jobs:
   create-item:
     runs-on: ubuntu-latest
-    permissions:
-      repository-projects	: read
     steps:
 
       - name: Get project data
@@ -19,6 +17,7 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           GH_TOKEN: ${{ github.token }}
         run: |
+          gh auth login --scopes "project"
           my_org="dvalleorg"
           my_num=1
           gh api graphql -f query='

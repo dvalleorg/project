@@ -25,4 +25,4 @@ jobs:
                   id
                 }
               }
-            }' -f org=$ORGANIZATION -f number=$PROJECT_NUMBER
+            }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER

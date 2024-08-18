@@ -11,8 +11,8 @@ jobs:
 
       - name: Get project data
         env:
-          ORGANIZATION: ${{ github.repository_owner }}
-          PROJECT_NUMBER: 1
+          ORGANIZATION: '${{ github.repository_owner }}'
+          PROJECT_NUMBER: '1'
           NUMBER: ${{ github.event.issue.number }}
           GH_TOKEN: ${{ github.token }}
         run: |

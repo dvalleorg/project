@@ -8,6 +8,8 @@ on:
 jobs:
   create-item:
     runs-on: ubuntu-latest
+    permissions:
+      projects: read
     steps:
 
       - name: Get project data

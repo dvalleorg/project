@@ -9,7 +9,7 @@ jobs:
   create-item:
     runs-on: ubuntu-latest
     permissions:
-      repository-projects	: write
+      repository-projects	: read
     steps:
 
       - name: Get project data

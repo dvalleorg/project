@@ -25,4 +25,4 @@ jobs:
                   id
                 }
               }
-            }' -f org=dvalleorg -f number=1
+            }' -f org=dvalleorg -f number='1'

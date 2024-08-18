@@ -1,0 +1,27 @@
+name: Create item in GitHub Project
+
+on:
+  issues: 
+    types: [ opened, reopened ]
+
+jobs:
+  create-item:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get project data
+        env:
+          ORGANIZATION: ${{ github.repository_owner }}
+          PROJECT_NUMBER: 3
+          NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo ${{ github.repository_owner }}
+          gh api graphql -f query='
+            query($org: String!, $number: Int!){
+              organization(login: $org){
+                projectV2(number: $number) {
+                  id
+                }
+              }
+            }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER
